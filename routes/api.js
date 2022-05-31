@@ -1,6 +1,7 @@
 
 const express = require('express');
 const fs = require("fs");
+
 const OrderClient_1 = require("./OrderClient");
 const orderClient = new OrderClient_1.default();
 
@@ -25,7 +26,7 @@ module.exports = function (app) {
     });
    
     app.post('/api/orders', (req, res) => {
-        console.log("In api post orders for " + req.body);
+        console.log("In api post orders for " +  JSON.stringify(req.body));
         // var orders = { "hello" : "world"}
         // res.status(200).send(orders);
         orderClient.saveOrder(req.body).then((orders) => {

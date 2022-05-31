@@ -66,6 +66,8 @@ class OrderClient {
         });
     }
     saveOrder(order) {
+
+        console.log("save order "+ JSON.stringify(order));
         return request.post(this.config.getOrderMSURL(), { json: true,
             headers: {
                 accept: 'application/json',
@@ -77,8 +79,10 @@ class OrderClient {
             return body;
         })
             .catch(err => {
+
+                console.log("save order error block"+ JSON.stringify(order));
             console.error(err);
-           // order.status = "Error ";
+           order.status = "Error ";
             return new Promise((resolve, _) => {
                 resolve(order);
             });
