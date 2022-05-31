@@ -10,6 +10,7 @@
     "cors": "^2.8.5",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
+    "faker": "^6.6.6",
     "mocha": "^2.4.5",
     "mongodb": "^2.1.16",
     "morgan": "^1.7.0",
@@ -34,5 +35,8 @@
   "bugs": {
     "url": "http://github.com/sclorg/nodejs-ex/issues"
   },
-  "homepage": "http://github.com/sclorg/nodejs-ex"
+  "homepage": "http://github.com/sclorg/nodejs-ex",
+  "devDependencies": {
+    "@faker-js/faker": "^7.1.0"
+  }
 }

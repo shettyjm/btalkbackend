@@ -12,3 +12,7 @@ exports.OrderedShipment = OrderedShipment;
 class Voyage {
 }
 exports.Voyage = Voyage;
+
+class Supplier {
+}
+exports.Supplier = Supplier;
