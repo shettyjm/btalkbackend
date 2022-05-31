@@ -24,5 +24,14 @@ module.exports = function (app) {
         });
     });
    
+    app.post('/api/orders', (req, res) => {
+        console.log("In api post orders for " + req.params.manuf);
+        // var orders = { "hello" : "world"}
+        // res.status(200).send(orders);
+        orderClient.saveOrder(req.body).then((orders) => {
+            console.log("Got a new order " + JSON.stringify(orders));
+            res.status(200).send(orders);
+        });
+    });
 }; // end exports
 //# sourceMappingURL=api.js.map
