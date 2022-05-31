@@ -1,0 +1,15 @@
+{
+  "kafkaBrokers" : "kafka1:9092",
+  "kafkaConnectTimeout" : 15000,
+  "kafkaGroupId": "kc-dashboard-group",
+  "port": 3010,
+  "fleetMSURL" : "http://simulator:9080/fleetms",
+  "orderMSURL" : "http://ordercmd:9080/orders",
+  "orderQueryMSURL" : "http://orderquery:9080/orders",
+  "voyagesMSURL": "http://voyages:3000",
+  "containerMSURL": "http://springcontainerms:8080/containers",
+  "problemTopicName" : "bluewater-problem",
+  "shipTopicName" : "bluewater-ship",
+  "version": "0.0.7",
+  "certsPath": "/etc/ssl/certs"
+ }

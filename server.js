@@ -2,7 +2,9 @@
 var express = require('express'),
     app     = express(),
     morgan  = require('morgan');
-    
+    var cors = require('cors');    
+
+    app.use(cors());
 Object.assign=require('object-assign')
 
 app.engine('html', require('ejs').renderFile);
@@ -73,6 +75,8 @@ var initDb = function(callback) {
   });
 };
 
+
+require('./routes/api')(app);
 app.get('/', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.
@@ -108,6 +112,9 @@ app.get('/pagecount', function (req, res) {
     res.send('{ pageCount: -1 }');
   }
 });
+
+
+
 
 // error handling
 app.use(function(err, req, res, next){
