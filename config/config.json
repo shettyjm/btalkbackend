@@ -5,6 +5,7 @@
   "port": 3010,
   "fleetMSURL" : "http://simulator:9080/fleetms",
   "orderMSURL" : "http://ordercmd:9080/orders",
+  "supplierMSURL" : "http://supplierms:9083/supplier",
   "orderQueryMSURL" : "http://orderquery:9080/orders",
   "voyagesMSURL": "http://voyages:3000",
   "containerMSURL": "http://springcontainerms:8080/containers",
