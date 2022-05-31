@@ -78,7 +78,7 @@ class OrderClient {
         })
             .catch(err => {
             console.error(err);
-            order.status = "Error " + err;
+           // order.status = "Error ";
             return new Promise((resolve, _) => {
                 resolve(order);
             });

@@ -25,7 +25,7 @@ module.exports = function (app) {
     });
    
     app.post('/api/orders', (req, res) => {
-        console.log("In api post orders for " + req.params.manuf);
+        console.log("In api post orders for " + req.body);
         // var orders = { "hello" : "world"}
         // res.status(200).send(orders);
         orderClient.saveOrder(req.body).then((orders) => {
