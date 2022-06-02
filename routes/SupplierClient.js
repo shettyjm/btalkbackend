@@ -3,6 +3,10 @@
 const AppConfig_1 = require("../config/AppConfig");
 const orderDomain = require("./orderDomain");
 const request = require("request-promise");
+const fs = require('fs');
+
+
+const dataPath = './Supplier.json'
 
 class SupplierClient {
     constructor() {
@@ -96,26 +100,33 @@ class SupplierClient {
     saveSupplier(supplier) {
 
         console.log("save supplier " + JSON.stringify(supplier));
-        return request.post(this.config.supplierMSURL(), {
-            json: true,
-            headers: {
-                accept: 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: supplier
-        })
-            .then(body => {
-                return body;
-            })
-            .catch(err => {
+        const stringifyData = JSON.stringify(supplier)
+        fs.writeFileSync(dataPath, stringifyData)
 
-                console.log("save order error block" + JSON.stringify(supplier));
-                console.error(err);
-                order.status = "Error ";
-                return new Promise((resolve, _) => {
-                    resolve(supplier);
-                });
-            });
+        return new Promise((resolve, _) => {
+            resolve(supplier);
+        })
+
+        // return request.post(this.config.supplierMSURL(), {
+        //     json: true,
+        //     headers: {
+        //         accept: 'application/json',
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: supplier
+        // })
+        //     .then(body => {
+        //         return body;
+        //     })
+        //     .catch(err => {
+
+        //         console.log("save order error block" + JSON.stringify(supplier));
+        //         console.error(err);
+        //         order.status = "Error ";
+        //         return new Promise((resolve, _) => {
+        //             resolve(supplier);
+        //         });
+        //     });
     }
 
 }

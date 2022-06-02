@@ -1,0 +1,11 @@
+{
+    "supplierID": 34343,
+    "status": "approved",
+    "Location": {
+        "street": "200 xavaier rd",
+        "city": "fremont",
+        "country": "usa",
+        "state": "MD",
+        "zipcode": "443588"
+    }
+}
